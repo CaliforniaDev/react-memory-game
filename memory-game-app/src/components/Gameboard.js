@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import Card from './Card';
 const Gameboard = () => {
   return (
     <DivContainer>
-      Hello
+      <Card />
     </DivContainer>
   );
 }
