@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 const Card = () => {
   return (
-    <MainContainer>
-      Card
-    </MainContainer>
+    <CardContainer>
+    </CardContainer>
   );
 }
 
 export default Card;
 
-const MainContainer = styled.div`
+const CardContainer = styled.div`
+  flex: 0 0 32rem;
+  height: 40rem;
+  border-radius: 1.6rem;
   color: #fff;
+  background: #fff;
 `
