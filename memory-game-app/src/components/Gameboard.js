@@ -1,17 +1,22 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Card from './Card';
+
 const Gameboard = () => {
+  const [level, setLevel] = useState(1);
   return (
-    <DivContainer>
+    <MainContainer>
       <Card />
-    </DivContainer>
+    </MainContainer>
   );
 }
 
 export default Gameboard;
 
-const DivContainer = styled.div`
+const MainContainer = styled.main`
   display: flex;
+  padding: 2.4rem;
+  flex-wrap: wrap;
   background: #444;
   width: 100vw;
   height: 100vh;
