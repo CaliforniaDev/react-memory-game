@@ -4,6 +4,7 @@ import Card from './Card';
 
 const Gameboard = () => {
   const [level, setLevel] = useState(1);
+  
   return (
     <MainContainer>
       <Card />
