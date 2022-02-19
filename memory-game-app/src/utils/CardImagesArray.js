@@ -11,10 +11,11 @@ const imagesObj = importImagesToObject(require.context('./images', false, /\.(pn
 
 const seperateObject = obj => {
   const imagesArray = [];
+  const regexFileExtenstion = /\.[^/.]+$/;
   const keys = Object.keys(obj);
   keys.forEach(key => {
     imagesArray.push({
-      name: key,
+      name: key.replace(regexFileExtenstion, ""), //<-- Removes File Extension//
       src: obj[key],
       id: uuidv4()
     });
