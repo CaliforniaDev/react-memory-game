@@ -14,6 +14,7 @@ const seperateObject = obj => {
   const keys = Object.keys(obj);
   keys.forEach(key => {
     imagesArray.push({
+      name: key,
       key: obj[key],
       id: uuidv4()
     });
