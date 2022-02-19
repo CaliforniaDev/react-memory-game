@@ -18,7 +18,7 @@ const MainContainer = styled.main`
   display: flex;
   padding: 2.4rem;
   flex-wrap: wrap;
-  background: #444;
+  background: #999;
   width: 100vw;
   height: 100vh;
 `
