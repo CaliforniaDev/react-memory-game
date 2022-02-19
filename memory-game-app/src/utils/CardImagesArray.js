@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 
-
+// import Images Object copied from stackoverflow
 const importImagesToObject = (r) => {
   const images = {};
   r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
