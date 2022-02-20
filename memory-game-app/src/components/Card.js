@@ -22,7 +22,7 @@ const CardContainer = styled.div`
   height: 40rem;
   border-radius: 0.8rem;
   color: #fff;
-  background: rgba(204, 76, 38, 1);
+  background: #5E5437;
   overflow: hidden;
 `
 const ImageWrapper = styled.div`
@@ -30,7 +30,7 @@ const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1.6rem;
-  background-color: rgba(242, 80, 38, 1);
+  background-color: #C4B072;
   border-radius: 0.8rem;
   height: 28rem;
   width: 28rem;
