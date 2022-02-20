@@ -11,5 +11,5 @@ export default Header;
 
 const HeaderWrapper = styled.div`
   height: 8rem;
-  background: gray;
+  background: #3B8C47;
 `
