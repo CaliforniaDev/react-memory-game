@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Images from '../utils/CardImagesArray';
-const Card = ({title, imageSrc}) => {
+const CardItem = ({title, imageSrc}) => {
   console.log(Images);
   return (
     <CardContainer>
@@ -12,7 +12,7 @@ const Card = ({title, imageSrc}) => {
   );
 }
 
-export default Card;
+export default CardItem;
 
 const CardContainer = styled.div`
   display: flex;
