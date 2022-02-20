@@ -5,9 +5,9 @@ const CardItem = ({title, imageSrc}) => {
   return (
     <CardContainer>
       <ImageWrapper>
-        <img src={Images[0].src} alt="Beaver" />
+        <img src={imageSrc} alt="Beaver" />
       </ImageWrapper>
-      <h4>{Images[0].name}</h4>
+      <h4>{title}</h4>
     </CardContainer>
   );
 }
