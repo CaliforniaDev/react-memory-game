@@ -11,10 +11,11 @@ function importImagesToObject(r) {
 function convertImageSrcToTitle(imageSrc) {
   //  CREATES OUR FILE NAME INTO A HEADER/TITLE //
   const matchFileExtensions = /\.[^/.]+$/; // <-- THIS HELPS REMOVE FILE EXTENSIONS //
-  const matchCapitalLetters = /([A-Z])([A-Z])/; // <-- THIS HELPS ADD SPACING BETWEEN CAPITAL LETTERS //
-  imageSrc.replace(matchFileExtensions, "");
-  console.log(imageSrc);
-  return imageSrc;
+  const matchCapitalLetters = /([A-Z])/g; // <-- THIS HELPS ADD SPACING BETWEEN CAPITAL LETTERS //
+  let imageTitle = imageSrc.replace(matchFileExtensions, "");
+  imageTitle = imageTitle.replace(matchCapitalLetters, ' $1').trim();
+  
+  return imageTitle;
 }
 
 function seperateObject (obj, convertImageSrcToTitle) {
