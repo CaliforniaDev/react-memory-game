@@ -35,6 +35,12 @@ const ImageWrapper = styled.div`
   height: 28rem;
   width: 28rem;
   margin: 2.4rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border: 1px soild red;
+  }
 `
 // /* Color Theme Swatches in Hex */
 // .Wuling---Year-of-the-Ox-1-hex { color: #038C3E; }
