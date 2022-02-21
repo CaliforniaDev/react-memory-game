@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Images from '../utils/CardImagesArray';
 const CardItem = ({title, imageSrc}) => {
-  console.log(Images);
   return (
     <CardContainer>
       <ImageWrapper>
