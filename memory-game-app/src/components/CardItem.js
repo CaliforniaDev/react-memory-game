@@ -1,9 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Images from '../utils/CardImagesArray';
-const CardItem = ({title, imageSrc}) => {
+import theme from '../theme/theme';
+const CardItem = ({title, imageSrc, bg, fg}) => {
   return (
-    <CardContainer>
-      <ImageWrapper>
+    <CardContainer bg={bg}>
+      <ImageWrapper fg={fg}>
         <img src={imageSrc} alt="Beaver" />
       </ImageWrapper>
       <h4>{title}</h4>
@@ -20,16 +21,17 @@ const CardContainer = styled.div`
   align-items: center;
   height: 40rem;
   border-radius: 0.8rem;
+  background: ${({ bg }) => bg};
   color: #fff;
-  background: #5E5437;
   overflow: hidden;
+
 `
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1.6rem;
-  background-color: #C4B072;
+  background-color: ${({ fg }) => fg} ;
   border-radius: 0.8rem;
   height: 28rem;
   width: 28rem;
@@ -61,3 +63,20 @@ const ImageWrapper = styled.div`
 // .Wuling---Year-of-the-Ox-3-hsla { color: hsla(45, 94, 48, 1); }
 // .Wuling---Year-of-the-Ox-4-hsla { color: hsla(33, 88, 55, 1); }
 // .Wuling---Year-of-the-Ox-5-hsla { color: hsla(11, 88, 55, 1); }
+
+// ${({ theme }) => {
+//   const { orange, yellow, green } = theme.bg;
+//   let imageCounter = 0;
+//   let j = 0;
+//   const colors = [orange, yellow, green]
+//   let colorItem = [];
+//   for (let i = 0; i < Images.length; i++) {
+//     while(j < colors.length) {
+//       colorItem.push(colors[j]);
+//       j++
+//     }
+//     console.log(colorItem);
+//     console.log(imageCounter);
+//   }
+//  // let item = items[Math.floor(Math.random() * items.length)]
+// }}
