@@ -1,5 +1,5 @@
 const theme = {
-  colors:{
+  fg:{
     green: '#3B8C47',
     yellow: '#C4B072',
     orange: '#F28705',
