@@ -12,7 +12,7 @@ const useSetCards = (images) => {
     const bgColors = Object.values(theme.bg);
     const fgColors = Object.values(theme.fg);
     const cardItems = images.map(image => {
-      (counter < 2) ? counter++ : counter = 0; // <-- ITERATES TROUGH 
+      (counter < 2) ? counter++ : counter = 0; // <-- ITERATES TROUGH ARRAY OF COLORS
       return (
         <CardItem
           imageSrc={image.src}
