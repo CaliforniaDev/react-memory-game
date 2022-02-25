@@ -1,11 +1,9 @@
 import styled, { css } from 'styled-components';
-import Images from '../utils/CardImagesArray';
-import theme from '../theme/theme';
 const CardItem = ({title, imageSrc, bg, fg}) => {
   return (
     <CardContainer bg={bg}>
       <ImageWrapper fg={fg}>
-        <img src={imageSrc} alt="Beaver" />
+        <img src={imageSrc} alt={title} />
       </ImageWrapper>
       <h4>{title}</h4>
     </CardContainer>
