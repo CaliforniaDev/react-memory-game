@@ -1,7 +1,21 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+import { useState, useEffect } from 'react';
 const CardItem = ({title, imageSrc, bg, fg}) => {
+  const [toAnimate, setToAnimate] = useState();
+  useEffect(() => {
+    setToAnimate(true)
+    const animationTimeout = setTimeout(() => {
+      setToAnimate(true);
+
+    }, 400);
+
+    return () => {
+      clearTimeout(animationTimeout);
+    }
+
+  },[toAnimate])
   return (
-    <CardContainer bg={bg}>
+    <CardContainer animation={toAnimate} bg={bg}>
       <ImageWrapper fg={fg}>
         <img src={imageSrc} alt={title} />
       </ImageWrapper>
@@ -11,6 +25,16 @@ const CardItem = ({title, imageSrc, bg, fg}) => {
 }
 
 export default CardItem;
+
+const appear = keyframes`
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+`
 
 const CardContainer = styled.div`
   display: flex;
@@ -22,6 +46,19 @@ const CardContainer = styled.div`
   background: ${({ bg }) => bg};
   color: #fff;
   overflow: hidden;
+  transition: 200ms;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  ${({ animation }) => {
+    animation &&
+    css`
+      animation: ${appear} 400ms 1s;
+    `
+  }}
+
 
 `
 const ImageWrapper = styled.div`
