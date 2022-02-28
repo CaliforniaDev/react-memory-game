@@ -11,7 +11,7 @@ const GameHeader = () => {
 }
 export default GameHeader;
 
-const HeaderSection = styled.section`
+const HeaderSection = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
