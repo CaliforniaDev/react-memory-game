@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 const GameHeader = () => {
   return (
-    <HeaderWrapper>
+    <HeaderSection>
       <h1>Memory Game</h1>
-    </HeaderWrapper>
+    </HeaderSection>
   );
 }
 export default GameHeader;
 
-const HeaderWrapper = styled.div`
+const HeaderSection = styled.section`
   display: flex;
   justify-content: center;
   height: 8rem;
