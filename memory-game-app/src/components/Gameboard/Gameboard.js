@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardGrid from './Card/CardGrid';
 
-const Gameboard = () => {
+const Gameboard = ({
+  handleCardClickedProp,
+}) => {
   const [level, setLevel] = useState(1);
   
   return (
     <MainContainer>
-      <CardGrid />
+      <CardGrid handleCardClickedProp={handleCardClickedProp} />
     </MainContainer>
   );
 }

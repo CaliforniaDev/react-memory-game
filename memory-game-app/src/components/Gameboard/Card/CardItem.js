@@ -1,6 +1,13 @@
 import styled, { css, keyframes } from 'styled-components';
 import { useState, useEffect } from 'react';
-const CardItem = ({ title, imageSrc, bg, fg }) => {
+const CardItem = ({
+  id,
+  bg,
+  fg,
+  title,
+  imageSrc,
+  onClick,
+}) => {
   const [toAnimate, setToAnimate] = useState();
   useEffect(() => {
     setToAnimate(true)
@@ -13,9 +20,10 @@ const CardItem = ({ title, imageSrc, bg, fg }) => {
       clearTimeout(animationTimeout);
     }
 
-  }, [toAnimate])
+  }, [toAnimate]);
+
   return (
-    <CardContainer animation={toAnimate} bg={bg}>
+    <CardContainer onClick={() => onClick(id)} animation={toAnimate} bg={bg}>
       <ImageWrapper fg={fg}>
         <img src={imageSrc} alt={title} />
       </ImageWrapper>
