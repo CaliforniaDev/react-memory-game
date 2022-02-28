@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import CardItem from './CardItem';
 import theme from '../../../theme/theme'
 
-const CardGrid = () => {
-
-
-
+const CardGrid = ({
+  handleCardClickedProp
+}) => {
   const foregroundColors = Object.values(theme.fg);
   const backgroundColors = Object.values(theme.bg);
   const arraylength = backgroundColors.length - 1;
@@ -21,8 +20,10 @@ const CardGrid = () => {
               imageSrc={image.src}
               title={image.name}
               key={image.id}
+              id={image.id}
               fg={foregroundColors[index]}
               bg={backgroundColors[index]}
+              onClick={handleCardClickedProp}
             />
           )
         })}
