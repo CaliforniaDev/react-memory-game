@@ -12,13 +12,10 @@ function App() {
     updateScore] = useScore();
 
   const [
-    cardsClicked,
     checkCardsClicked,
     updateCardsClicked,
-    resetCardsClicked] = useCardsClicked()
-  const array = []
-  const check = () => {
-  }
+    resetCardsClicked] = useCardsClicked();
+
   const handleCardClicked = (id) => {
     if (checkCardsClicked(id)) {
       resetCardsClicked();

@@ -16,5 +16,5 @@ export const useCardsClicked = () => {
     setCardsClicked([])
   }
   
-  return [cardsClicked, checkCardsClicked, updateCardsClicked, resetCardsClicked];
+  return [checkCardsClicked, updateCardsClicked, resetCardsClicked];
 }
