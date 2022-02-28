@@ -10,10 +10,10 @@ export const useScore = () => {
 
   const updateScore = (points) => {
     setScore(prevScore => {
-      const score = prevScore + points;
-      if (score > prevScore) return setBestScore(score);
-
-      return score;
+      const newScore = prevScore + points;
+      //console.log(score);
+      if (newScore > bestScore) setBestScore(newScore);
+      return newScore;
     })
   }
   return [score, bestScore, resetScore, updateScore];
