@@ -1,10 +1,10 @@
 import Gameboard from "./components/Gameboard/Gameboard";
-import Header from "./components/Header/Header";
+import GameHeader from "./components/GameHeader/Header";
 
 function App() {
   return (
     <>
-    <Header />
+    <GameHeader />
     <Gameboard />
     </>
       

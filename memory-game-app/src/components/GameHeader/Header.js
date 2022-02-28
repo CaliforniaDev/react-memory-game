@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-const Header = () => {
+const GameHeader = () => {
   return (
     <HeaderWrapper>
       <h1>Memory Game</h1>
     </HeaderWrapper>
   );
 }
-export default Header;
+export default GameHeader;
 
 const HeaderWrapper = styled.div`
   display: flex;
