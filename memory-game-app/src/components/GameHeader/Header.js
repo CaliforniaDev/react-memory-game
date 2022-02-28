@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Scoreboard from './Scoreboard';
 
-const GameHeader = () => {
+const GameHeader = ({ score, bestScore }) => {
   return (
     <HeaderSection>
       <h1>Memory Game</h1>
-      <Scoreboard />
+      <Scoreboard score={score} bestScore={bestScore} />
     </HeaderSection>
   );
 }

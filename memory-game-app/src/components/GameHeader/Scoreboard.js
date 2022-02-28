@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const Scoreboard = () => {
+const Scoreboard = ({score, bestScore}) => {
   return(
     <ScoreContainer>
-      <Score>Score: 0</Score>
+      <Score>Score: {score}</Score>
       <Divider />
-      <BestScore>Best: 0</BestScore>
+      <BestScore>Best: {bestScore}</BestScore>
     </ScoreContainer>
   );
 }
