@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import CardGrid from './CardGrid';
+import CardGrid from './Card/CardGrid';
 
 const Gameboard = () => {
   const [level, setLevel] = useState(1);

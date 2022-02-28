@@ -1,12 +1,15 @@
 import { v4 as uuidv4 } from 'uuid';
 
 
-function importImagesToObject(r) {
+function importImagesToObject(imagesFolder) {
   // EXTRACTS IMAGES FROM FOLDER INTO AN OBJECT //
-  const images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  let images = {};
+  imagesFolder.keys().map((item, index) => { 
+    return images[item.replace('./', '')] = imagesFolder(item); 
+  });
   return images;
 }
+
 
 function convertImageSrcToTitle(imageSrc) {
   //  CREATES OUR FILE NAME INTO A HEADER/TITLE //

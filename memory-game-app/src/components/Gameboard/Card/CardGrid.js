@@ -1,7 +1,7 @@
-import Images from '../utils/CardImagesArray';
+import Images from './CardImagesArray';
 import styled from 'styled-components';
 import CardItem from './CardItem';
-import theme from '../theme/theme'
+import theme from '../../../theme/theme'
 
 const CardGrid = () => {
 
