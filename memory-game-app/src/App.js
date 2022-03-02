@@ -17,13 +17,6 @@ function App() {
     updateCardsClicked,
     resetCardsClicked] = useCardsClicked();
 
-    const [
-      handleForegroundTheme,
-      handleBackgroundTheme,
-    ] = useCardsCollection();
-
-
-   
 
   const handleCardClicked = (id) => {
     if (checkCardsClicked(id)) {
