@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useScore } from './hooks/useScore'
+import { useCardsCollection } from './hooks/lib/CardsCollection';
 import { useCardsClicked } from './hooks/useCardsClicked';
 import Gameboard from "./components/Gameboard/Gameboard";
 import GameHeader from "./components/GameHeader/Header";
@@ -15,6 +16,14 @@ function App() {
     checkCardsClicked,
     updateCardsClicked,
     resetCardsClicked] = useCardsClicked();
+
+    const [
+      handleForegroundTheme,
+      handleBackgroundTheme,
+    ] = useCardsCollection();
+
+
+   
 
   const handleCardClicked = (id) => {
     if (checkCardsClicked(id)) {
