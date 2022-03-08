@@ -13,6 +13,7 @@ export default GameHeader;
 
 const HeaderSection = styled.header`
   display: flex;
+  z-index: 100;
   position: fixed;
   justify-content: center;
   align-items: center;
