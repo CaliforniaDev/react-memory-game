@@ -24,6 +24,7 @@ const CardGrid = ({
               fg={foregroundColors[index]}
               bg={backgroundColors[index]}
               onClick={handleCardClickedProp}
+              draggable="false"
             />
           )
         })}
