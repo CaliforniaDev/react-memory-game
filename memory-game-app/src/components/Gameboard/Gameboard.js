@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import CardItem from './Card/CardItem';
 import CardGrid from './Card/CardGrid';
 
 const Gameboard = ({
   handleCardClickedProp,
+  cards
 }) => {
   const [level, setLevel] = useState(1);
   
   return (
     <MainContainer>
-      <CardGrid handleCardClickedProp={handleCardClickedProp} />
+      {cards && cards.map(card => {
+        console.log(card.bg);
+        return (
+          <CardItem
+            imageSrc={card.src}
+            title={card.name}
+            key={card.id}
+            id={card.id}
+            fg={card.fgColor}
+            bg={card.bgColor}
+            onClick={handleCardClickedProp}
+            draggable="false" 
+          />
+        )
+      })}
+      {/* <CardGrid handleCardClickedProp={handleCardClickedProp} /> */}
     </MainContainer>
   );
 }
