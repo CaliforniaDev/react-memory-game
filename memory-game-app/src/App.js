@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import theme from './theme/theme';
 import { useScore } from './hooks/useScore'
 import { useCards } from './hooks/useCards';
-
 import { useCardsClicked } from './hooks/useCardsClicked';
 import Gameboard from "./components/Gameboard/Gameboard";
 import GameHeader from "./components/GameHeader/Header";
@@ -33,13 +32,13 @@ function App() {
       return resetScore();
     }
     updateScore(1);
-    console.log(score);
     return updateCardsClicked(id);
   }
   return (
     <>
       <GameHeader score={score} bestScore={bestScore} />
       <Gameboard
+        cards={cards}
         handleCardClickedProp={handleCardClicked}
       />
     </>
