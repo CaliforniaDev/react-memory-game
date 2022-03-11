@@ -15,9 +15,11 @@ const HeaderSection = styled.header`
   display: flex;
   z-index: 100;
   position: fixed;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
   min-height: 8rem;
+  max-height: 16rem;
+  opacity: 0.6;
   background: #3B8C47;
 `
