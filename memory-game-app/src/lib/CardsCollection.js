@@ -29,15 +29,22 @@ function updateBackgroundTheme(theme) {
     return CARDS;
 }
 
-const retrieveCardItems = (theme) => {
+function cardShuffler(cards) {
+  const shuffled = cards.sort(() => Math.random() - 0.5)
+  return shuffled;
+}
+
+function retrieveCardItems (theme) {
+  const shuffledCards = cardShuffler(CARDS)
   updateBackgroundTheme(theme);
   updateForegroundTheme(theme);
-  return CARDS;
+  return shuffledCards;
 }
 
 
 const CardsCollection = {
   retrieveCardItems,
+  cardShuffler
 }
 
 export {CardsCollection as default};
