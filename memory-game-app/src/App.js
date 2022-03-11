@@ -18,7 +18,8 @@ function App() {
     updateCardsClicked,
     resetCardsClicked] = useCardsClicked();
 
-  const [cards, updateCards] = useCards();
+  const [cards, updateCards, shuffleCards] = useCards();
+
   useEffect(() => {
     updateCards(theme)
   }, [cards]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -31,6 +32,7 @@ function App() {
       resetCardsClicked();
       return resetScore();
     }
+    shuffleCards();
     updateScore(1);
     return updateCardsClicked(id);
   }
