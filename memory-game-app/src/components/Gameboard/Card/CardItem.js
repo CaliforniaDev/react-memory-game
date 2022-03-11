@@ -27,7 +27,7 @@ const CardItem = ({
       <ImageWrapper fg={fg}>
         <img src={imageSrc} alt={title} />
       </ImageWrapper>
-      <h4>{title}</h4>
+      {/* <h4>{title}</h4> */}
     </CardContainer>
   );
 }
@@ -47,9 +47,9 @@ const appear = keyframes`
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 0 0 32rem;
+  max-width: 26rem;
   align-items: center;
-  height: 40rem;
+  height: rem;
   border-radius: 0.8rem;
   background: ${({ bg }) => bg};
   color: #fff;
@@ -76,9 +76,9 @@ const ImageWrapper = styled.div`
   padding: 1.6rem;
   background-color: ${({ fg }) => fg} ;
   border-radius: 0.8rem;
-  height: 28rem;
-  width: 28rem;
-  margin: 2.4rem;
+  height: 20rem;
+  width: 100%;
+
 
   img {
     width: 100%;
