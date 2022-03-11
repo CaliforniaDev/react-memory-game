@@ -5,9 +5,13 @@ import CardsCollection from '../lib/CardsCollection';
 export const useCards = () => {
   const [cards, setCards] = useState(null);
 
-  const updateCards = (theme) => {
-    const newCards = CardsCollection.retrieveCardItems(theme);
+  const shuffleCards = () => {
+    setCards((prevCards) => CardsCollection.cardShuffler(prevCards));
+  }
+
+  const updateCards = async (theme) => {
+    const newCards = await CardsCollection.retrieveCardItems(theme);
     setCards(newCards);
   }
-  return [cards, updateCards];
+  return [cards, updateCards, shuffleCards];
 }
