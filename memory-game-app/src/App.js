@@ -12,20 +12,29 @@ function App() {
     bestScore,
     resetScore,
     updateScore] = useScore();
-
   const [
     checkCardsClicked,
     updateCardsClicked,
     resetCardsClicked] = useCardsClicked();
-
-  const [cards, updateCards, shuffleCards] = useCards();
+  const [
+    cards,
+    updateCards,
+    shuffleCards] = useCards();
 
   useEffect(() => {
-    updateCards(theme)
+    function watchScroll() {
+      window.addEventListener("scroll", changeOpacity);
+    }
+    watchScroll();
+    updateCards(theme);
+    return () => {
+      window.removeEventListener("scroll", changeOpacity);
+    }
   }, [cards]) // eslint-disable-line react-hooks/exhaustive-deps
 
-
-
+  function changeOpacity() {
+    console.log("scrolled");
+  }
 
   const handleCardClicked = (id) => {
     if (checkCardsClicked(id)) {
@@ -36,6 +45,8 @@ function App() {
     updateScore(1);
     return updateCardsClicked(id);
   }
+
+
   return (
     <>
       <GameHeader score={score} bestScore={bestScore} />
