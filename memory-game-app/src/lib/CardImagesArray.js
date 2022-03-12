@@ -36,7 +36,7 @@ function seperateObject (obj, convertImageSrcToTitle) {
   return imagesArray;
 }
 
-const imagesObj = importImagesToObject(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+const imagesObj = importImagesToObject(require.context('./assets/images', false, /\.(png|jpe?g|svg)$/));
 const Images = seperateObject(imagesObj, convertImageSrcToTitle);
 
 export default Images
