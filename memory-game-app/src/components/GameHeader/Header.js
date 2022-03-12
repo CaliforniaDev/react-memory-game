@@ -15,11 +15,14 @@ const HeaderSection = styled.header`
   display: flex;
   z-index: 100;
   position: fixed;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   width: 100%;
   min-height: 8rem;
   max-height: 16rem;
-  opacity: 0.6;
-  background: #3B8C47;
+  padding-left: 56px;
+  background: ${({ theme }) => theme.header};
+  color: ${({ theme }) => theme.lightFont};
+  box-shadow: 0px 1px 10px #333;
+  border-radius: 2px;
 `
