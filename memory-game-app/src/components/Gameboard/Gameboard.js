@@ -34,7 +34,7 @@ const MainContainer = styled.main`
   justify-content: center;
   padding: 16rem 2.4rem;
   flex-wrap: wrap;
-  background: #403B31;
+  background: ${({ theme }) => theme.gameboard};
   width: 100vw;
   height: 100%;
 `
@@ -44,6 +44,7 @@ const BoardWrapper = styled.div`
   grid-template-rows: auto;
   grid-gap: 3.2rem; /* 3 */
   justify-content: center;
+  color: white;
   width: 100%;
 
 
