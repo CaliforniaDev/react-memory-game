@@ -44,7 +44,6 @@ const BoardWrapper = styled.div`
   grid-template-rows: auto;
   grid-gap: 3.2rem; /* 3 */
   justify-content: center;
-  color: white;
   width: 100%;
 
 
