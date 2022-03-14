@@ -14,7 +14,6 @@ const Scoreboard = ({score, bestScore}) => {
 
 const ScoreContainer = styled.div`
   display: flex;
-
   align-items: center;
 `;
 
