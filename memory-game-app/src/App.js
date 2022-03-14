@@ -22,19 +22,9 @@ function App() {
     shuffleCards] = useCards();
 
   useEffect(() => {
-    function watchScroll() {
-      window.addEventListener("scroll", changeOpacity);
-    }
-    watchScroll();
     updateCards(theme);
-    return () => {
-      window.removeEventListener("scroll", changeOpacity);
-    }
   }, [cards]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  function changeOpacity() {
-    console.log("scrolled");
-  }
 
   const handleCardClicked = (id) => {
     if (checkCardsClicked(id)) {
