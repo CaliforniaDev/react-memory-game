@@ -1,25 +1,16 @@
-import styled, { css, keyframes } from 'styled-components';
-import { useState, useEffect } from 'react';
-const CardItem = ({
-  id,
-  bg,
-  fg,
-  title,
-  imageSrc,
-  onClick,
-}) => {
+import styled, { css, keyframes } from "styled-components";
+import { useState, useEffect } from "react";
+const CardItem = ({ id, bg, fg, title, imageSrc, onClick }) => {
   const [toAnimate, setToAnimate] = useState();
   useEffect(() => {
-    setToAnimate(true)
+    setToAnimate(true);
     const animationTimeout = setTimeout(() => {
       setToAnimate(true);
-
     }, 400);
 
     return () => {
       clearTimeout(animationTimeout);
-    }
-
+    };
   }, [toAnimate]);
 
   return (
@@ -30,7 +21,7 @@ const CardItem = ({
       {/* <h4>{title}</h4> */}
     </CardContainer>
   );
-}
+};
 
 export default CardItem;
 
@@ -42,7 +33,7 @@ const appear = keyframes`
   100% {
     transform: scale(1);
   }
-`
+`;
 
 const CardContainer = styled.div`
   display: flex;
@@ -63,29 +54,26 @@ const CardContainer = styled.div`
   ${({ animation }) => {
     animation &&
       css`
-      animation: ${appear} 400ms 1s;
-    `
+        animation: ${appear} 400ms 1s;
+      `;
   }}
-
-
-`
+`;
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1.6rem;
-  background-color: ${({ fg }) => fg} ;
+  background-color: ${({ fg }) => fg};
   border-radius: 0.8rem;
   height: 20rem;
   width: 100%;
-
 
   img {
     width: 100%;
     height: 100%;
     border: 1px soild red;
   }
-`
+`;
 // /* Color Theme Swatches in Hex */
 // .Wuling---Year-of-the-Ox-1-hex { color: #038C3E; }
 // .Wuling---Year-of-the-Ox-2-hex { color: #04BF45; }
