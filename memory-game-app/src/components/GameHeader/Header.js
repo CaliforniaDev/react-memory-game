@@ -1,32 +1,29 @@
-import styled from 'styled-components';
-import Scoreboard from './Scoreboard';
-import { useState, useEffect } from 'react';
+import styled from "styled-components";
+import Scoreboard from "./Scoreboard";
+import { useState, useEffect } from "react";
 
 const GameHeader = ({ score, bestScore }) => {
-  const [scrollY, setScrollY] = useState(0);
-  const [isActive, setActive] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
 
   useEffect(() => {
-    function watchScroll() {
-      window.addEventListener("scroll", changeOpacity);
-    }
-    watchScroll();
+    const handleScroll = () => {
+      if (window.scrollY > 30) setShowHeader(true);
+      if (window.scrollY < 30) setShowHeader(false);
+    };
+    document.addEventListener("scroll", handleScroll);
+    console.log("scroll");
     return () => {
-      window.removeEventListener("scroll", changeOpacity);
-    }
-  })
-  function changeOpacity() {
-    setScrollY(window.pageYOffset);
-    if (scrollY > 10) return setActive(true);
-    if (scrollY < 10 ) return setActive(false);
-  }
+      console.log("remove scroll");
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [showHeader]);
   return (
-    <HeaderSection active={isActive}>
+    <HeaderSection showHeader={showHeader}>
       <h1>Memory Game</h1>
       <Scoreboard score={score} bestScore={bestScore} />
     </HeaderSection>
   );
-}
+};
 export default GameHeader;
 
 const HeaderSection = styled.header`
@@ -44,5 +41,5 @@ const HeaderSection = styled.header`
   box-shadow: 0px 1px 10px #333;
   border-radius: 2px;
   transition: 0.4s;
-  opacity: ${({ active }) => active ? 0.75 : 1};
-`
+  opacity: ${({ showHeader }) => (showHeader ? 0.75 : 1)};
+`;
