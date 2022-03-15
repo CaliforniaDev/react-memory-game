@@ -1,21 +1,21 @@
 import { createGlobalStyle } from "styled-components";
-import CabinRegularW2 from '../lib/assets/fonts/Cabin-Regular.woff2';
-import CabinRegular from '../lib/assets/fonts/Cabin-Regular.woff';
-import RobotoCondensedW2 from '../lib/assets/fonts/Roboto-Regular.woff2';
-import RobotoCondensed from '../lib/assets/fonts/Roboto-Regular.woff';
-const GlobalStyle = createGlobalStyle `
+import CabinRegularW2 from "../lib/assets/fonts/Cabin-Regular.woff2";
+import CabinRegular from "../lib/assets/fonts/Cabin-Regular.woff";
+import RobotoCondensedW2 from "../lib/assets/fonts/Roboto-Regular.woff2";
+import RobotoCondensed from "../lib/assets/fonts/Roboto-Regular.woff";
+const GlobalStyle = createGlobalStyle`
 
 @font-face {
     font-family: "Cabin";
-    src: url(${ CabinRegularW2 }) format("woff2"),
-         url(${ CabinRegular }) format("woff");
+    src: url(${CabinRegularW2}) format("woff2"),
+         url(${CabinRegular}) format("woff");
          font-weight: normal;
          font-style: normal;
 }
 @font-face {
     font-family: "Roboto Condensed";
-    src: url(${ RobotoCondensedW2 }) format("woff2"),
-         url(${ RobotoCondensed }) format("woff");
+    src: url(${RobotoCondensedW2}) format("woff2"),
+         url(${RobotoCondensed}) format("woff");
          font-weight: normal;
          font-style: normal; 
 }
@@ -28,6 +28,7 @@ html {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 *, *:before, *:after {
     padding: 0;
@@ -67,6 +68,6 @@ h4 {
 h5 {
     font-size: 1.6rem;
 }
-`
+`;
 
 export default GlobalStyle;
