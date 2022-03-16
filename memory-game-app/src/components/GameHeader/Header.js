@@ -7,8 +7,8 @@ const GameHeader = ({ score, bestScore }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) setShowHeader(true);
-      if (window.scrollY < 30) setShowHeader(false);
+      if (window.pageYOffset > 30) setShowHeader(true);
+      if (window.pageYOffset < 30) setShowHeader(false);
     };
     document.addEventListener("scroll", handleScroll);
     console.log("scroll");
@@ -17,6 +17,7 @@ const GameHeader = ({ score, bestScore }) => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [showHeader]);
+  
   return (
     <HeaderSection showHeader={showHeader}>
       <h1>Memory Game</h1>
