@@ -1,31 +1,29 @@
-import styled from 'styled-components';
-import CardItem from './Card/CardItem';
+import styled from "styled-components";
+import CardItem from "./Card/CardItem";
 
-const Gameboard = ({
-  handleCardClickedProp,
-  cards
-}) => {
+const Gameboard = ({ handleCardClickedProp, cards }) => {
   return (
     <MainContainer>
       <BoardWrapper>
-        {cards && cards.map(card => {
-          return (
-            <CardItem
-              imageSrc={card.src}
-              title={card.name}
-              key={card.id}
-              id={card.id}
-              fg={card.fgColor}
-              bg={card.bgColor}
-              onClick={handleCardClickedProp}
-              draggable="false"
-            />
-          )
-        })}
+        {cards &&
+          cards.map((card) => {
+            return (
+              <CardItem
+                imageSrc={card.src}
+                title={card.name}
+                key={card.id}
+                id={card.id}
+                fg={card.fgColor}
+                bg={card.bgColor}
+                onClick={handleCardClickedProp}
+                draggable="false"
+              />
+            );
+          })}
       </BoardWrapper>
     </MainContainer>
   );
-}
+};
 
 export default Gameboard;
 
@@ -37,7 +35,7 @@ const MainContainer = styled.main`
   background: ${({ theme }) => theme.gameboard};
   width: 100vw;
   height: 100%;
-`
+`;
 const BoardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px); /* 2 */
@@ -45,7 +43,4 @@ const BoardWrapper = styled.div`
   grid-gap: 3.2rem; /* 3 */
   justify-content: center;
   width: 100%;
-
-
-`
-
+`;
