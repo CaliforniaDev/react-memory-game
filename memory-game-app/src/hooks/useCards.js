@@ -9,8 +9,8 @@ export const useCards = () => {
     setCards((prevCards) => CardsCollection.cardShuffler(prevCards));
   }
 
-  const updateCards = async (theme) => {
-    const newCards = await CardsCollection.retrieveCardItems(theme);
+  const updateCards = async (quantity, theme) => {
+    const newCards = await CardsCollection.retrieveCardItems(quantity, theme);
     setCards(newCards);
   }
   return [cards, updateCards, shuffleCards];
