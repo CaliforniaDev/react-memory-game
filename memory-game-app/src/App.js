@@ -10,10 +10,10 @@ function App() {
   const [score, bestScore, resetScore, updateScore] = useScore();
   const [checkCardsClicked, updateCardsClicked, resetCardsClicked] = useCardsClicked();
   const [cards, updateCards, shuffleCards] = useCards();
-
+  const quantity = 4;
   useEffect(() => {
-    updateCards(theme);
-  }, [cards]); // eslint-disable-line react-hooks/exhaustive-deps
+    updateCards(quantity, theme);
+  }, [quantity]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleCardClicked = (id) => {
     if (checkCardsClicked(id)) {
