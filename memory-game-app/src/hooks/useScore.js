@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export const useScore = () => {
   const [score, setScore] = useState(0);
@@ -6,15 +6,15 @@ export const useScore = () => {
 
   const resetScore = () => {
     return setScore(0);
-  }
+  };
 
   const updateScore = (points) => {
-    setScore(prevScore => {
+    setScore((prevScore) => {
       const newScore = prevScore + points;
       //console.log(score);
       if (newScore > bestScore) setBestScore(newScore);
       return newScore;
-    })
-  }
+    });
+  };
   return [score, bestScore, resetScore, updateScore];
-}
+};
