@@ -25,7 +25,7 @@ function retrieveForegroundTheme(cards, theme) {
   Promise.all(
     cards.map((cardItem) => {
       cardItem.fgColor = foregroundColors[index];
-      if (index < arrayLength - 1) index++;
+      if (index <= arrayLength - 1) index++;
       if (index > arrayLength - 1) index = 0;
       return cardItem;
     })
