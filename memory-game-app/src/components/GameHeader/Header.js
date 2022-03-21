@@ -17,7 +17,7 @@ const GameHeader = ({ score, bestScore }) => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [showHeader]);
-  
+
   return (
     <HeaderSection showHeader={showHeader}>
       <h1>Memory Game</h1>
