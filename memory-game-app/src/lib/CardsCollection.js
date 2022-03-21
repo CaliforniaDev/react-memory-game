@@ -3,17 +3,19 @@ import imagesArray from "./CardImagesArray";
 const CARDS = imagesArray,
   MAX = CARDS.length - 1;
 
-function generateRandomizedIndex() {
-  const index = Math.floor(Math.random() * MAX) + 1;
+function getRandomizedStart(quantity) {
+  const index = Math.floor(Math.random() * (MAX - quantity)) + 1;
   return index;
 }
 
-function getRandomizedImage(quantity) {
-  const cardImages = [];
-  for (let i = 0; i < quantity; i++) {
-    cardImages.push(CARDS[generateRandomizedIndex()]);
+function fetchCardItems(quantity) {
+  const cards = [];
+  const startIndex = getRandomizedStart(quantity);
+  const endIndex = startIndex + quantity
+  for (let i = startIndex; i < endIndex; i++) {
+    cards.push(CARDS[i]);
   }
-  return cardImages;
+  return cards;
 }
 
 function retrieveForegroundTheme(cards, theme) {
@@ -30,7 +32,6 @@ function retrieveForegroundTheme(cards, theme) {
   );
   return cards;
 }
-
 // const updateBackgroundTheme = async (cards, theme) => {
 //   const backgroundColors = await Object.values(theme.bg);
 //     const arrayLength = backgroundColors.length;
@@ -51,9 +52,8 @@ function cardShuffler(cards) {
 }
 
 const retrieveCardItems = (quantity, theme) => {
-  const cards = getRandomizedImage(quantity);
+  const cards = fetchCardItems(quantity);
   const shuffledCards = cardShuffler(cards);
-  // await updateBackgroundTheme(cards, theme);
   retrieveForegroundTheme(cards, theme);
   return shuffledCards;
 };
