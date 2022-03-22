@@ -38,9 +38,10 @@ const appear = keyframes`
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 26rem;
+  width: 14rem;
   align-items: center;
-  height: rem;
+  justify-content: center;
+  height: 16rem;
   border-radius: 0.8rem;
   background: ${({ bg }) => bg};
   color: #fff;
