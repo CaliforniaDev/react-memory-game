@@ -42,6 +42,7 @@ body, textarea {
     letter-spacing: 1px;
     font-size: 1.6rem;
     margin: 0;
+    background: ${({ theme }) => theme.gameboard}
 }
 h1,
 h2,
