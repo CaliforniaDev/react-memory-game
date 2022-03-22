@@ -4,6 +4,7 @@ import { useScore } from "./hooks/useScore";
 import { useCards } from "./hooks/useCards";
 import { useCardsClicked } from "./hooks/useCardsClicked";
 import { useLevel } from "./hooks/useLevel";
+import { useGame } from "./hooks/useGame"
 import Gameboard from "./components/Gameboard/Gameboard";
 import GameHeader from "./components/GameHeader/Header";
 
@@ -20,6 +21,9 @@ function App() {
   const [cards, updateCards, shuffleCards] = useCards();
 
   const [level, nextLevel, resetLevel] = useLevel(score);
+
+  const [isLoading] = useGame();
+  console.log(isLoading);
 
   useEffect(() => {
     startLevel();
