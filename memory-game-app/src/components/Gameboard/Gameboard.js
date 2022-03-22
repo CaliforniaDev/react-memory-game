@@ -37,10 +37,9 @@ const MainContainer = styled.main`
   height: 100%;
 `;
 const BoardWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 200px); /* 2 */
-  grid-template-rows: auto;
-  grid-gap: 3.2rem; /* 3 */
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 3.2rem; 
   justify-content: center;
   width: 100%;
 `;
