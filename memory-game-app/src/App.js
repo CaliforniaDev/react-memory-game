@@ -9,6 +9,7 @@ import GameHeader from "./components/GameHeader/Header";
 
 function App() {
   const [score, bestScore, resetScore, updateScore] = useScore();
+
   const [
     checkCardsClicked,
     updateCardsClicked,
@@ -17,6 +18,7 @@ function App() {
   ] = useCardsClicked();
 
   const [cards, updateCards, shuffleCards] = useCards();
+
   const [level, nextLevel, resetLevel] = useLevel(score);
 
   useEffect(() => {
