@@ -33,27 +33,18 @@ export const useGame = () => {
   function handleNextLevel() {
     nextLevel();
     resetCardsClicked();
-    shuffleCards();
-  }
-  function handleGameOver() {
-    setIsGameOver(true);
-    setIsLoading(false);
-    resetScore();
-    resetCardsClicked();
-    resetLevel();
-    shuffleCards();
-    return;
   }
   function startNewGame() {
     setIsLoading(true);
     setIsGameOver(false);
-    console.log(`Game Over: ${isGameOver}`);
-    console.log(`Loading: ${isLoading}`)
+    resetCardsClicked();
+    resetScore();
+    resetLevel();
   }
 
   function handleCardsClicked(id) {
     if (!checkCardsClicked(id)) handleCorrectClick(id);
-    if (checkCardsClicked(id)) handleGameOver();
+    if (checkCardsClicked(id)) setIsGameOver(true);
     if (isAllCardsClicked(level.cardCount)) handleNextLevel();
   }
 
@@ -65,6 +56,7 @@ export const useGame = () => {
     level,
     startLevel,
     startNewGame,
+    isGameOver,
     handleCardsClicked,
   ];
 };
