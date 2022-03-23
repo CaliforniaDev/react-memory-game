@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useGame } from "./useGame/useGame";
 import Gameboard from "./components/Gameboard/Gameboard";
 import GameHeader from "./components/GameHeader/Header";
+import GameOver from "./components/GameOver/GameOver";
 // import { useScore } from "./hooks/useScore";
 // import { useCards } from "./hooks/useCards";
 // import { useCardsClicked } from "./hooks/useCardsClicked";
@@ -15,17 +16,21 @@ function App() {
     bestScore,
     level,
     startLevel,
+    startNewGame,
     handleCardsClicked
   ] = useGame();
 
   useEffect(() => {
     startLevel();
+    console.log(level);
   }, [level]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
+      <GameOver startNewGameClicked={startNewGame}/>
       <GameHeader score={score} bestScore={bestScore} />
       <Gameboard cards={cards} handleCardClickedProp={handleCardsClicked} />
+      
     </>
   );
 }
