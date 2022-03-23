@@ -18,7 +18,7 @@ function App() {
     startLevel,
     startNewGame,
     isGameOver,
-    handleCardsClicked
+    handleCardsClicked,
   ] = useGame();
 
   useEffect(() => {
@@ -27,51 +27,54 @@ function App() {
   }, [level]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
-      <GameOver score={score} bestScore={bestScore} show={isGameOver} startNewGameClicked={startNewGame}/>
+      <GameOver
+        score={score}
+        bestScore={bestScore}
+        show={isGameOver}
+        startNewGameClicked={startNewGame}
+      />
       <GameHeader score={score} bestScore={bestScore} />
       <Gameboard cards={cards} handleCardClickedProp={handleCardsClicked} />
-      
     </>
   );
 }
 
 export default App;
 
+// const [score, bestScore, resetScore, updateScore] = useScore();
 
-  // const [score, bestScore, resetScore, updateScore] = useScore();
+// const [
+//   checkCardsClicked,
+//   updateCardsClicked,
+//   isAllCardsClicked,
+//   resetCardsClicked,
+// ] = useCardsClicked();
 
-  // const [
-  //   checkCardsClicked,
-  //   updateCardsClicked,
-  //   isAllCardsClicked,
-  //   resetCardsClicked,
-  // ] = useCardsClicked();
+// const [cards, updateCards, shuffleCards] = useCards();
 
-  // const [cards, updateCards, shuffleCards] = useCards();
+// const [level, nextLevel, resetLevel] = useLevel();
 
-  // const [level, nextLevel, resetLevel] = useLevel();
+// const [isLoading] = useGame();
+// console.log(isLoading);
 
-  // const [isLoading] = useGame();
-  // console.log(isLoading);
+// const startLevel = async () => {
+//   await updateCards(level.cardCount, theme);
+// };
+// const handleCardClicked = (id) => {
+//   if (!checkCardsClicked(id)) {
+//     updateCardsClicked(id);
+//     updateScore(1);
 
-  // const startLevel = async () => {
-  //   await updateCards(level.cardCount, theme);
-  // };
-  // const handleCardClicked = (id) => {
-  //   if (!checkCardsClicked(id)) {
-  //     updateCardsClicked(id);
-  //     updateScore(1);
-
-  //     if (isAllCardsClicked(level.cardCount)) {
-  //       nextLevel();
-  //       resetCardsClicked();
-  //     } else {
-  //       shuffleCards();
-  //     }
-  //   } else {
-  //     resetScore();
-  //     resetCardsClicked();
-  //     resetLevel();
-  //     shuffleCards();
-  //   }
-  // };
+//     if (isAllCardsClicked(level.cardCount)) {
+//       nextLevel();
+//       resetCardsClicked();
+//     } else {
+//       shuffleCards();
+//     }
+//   } else {
+//     resetScore();
+//     resetCardsClicked();
+//     resetLevel();
+//     shuffleCards();
+//   }
+// };
