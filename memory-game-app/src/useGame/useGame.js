@@ -21,6 +21,8 @@ export const useGame = () => {
 
   const startLevel = async () => {
     await updateCards(level.cardCount, theme);
+    setIsLoading(false);
+    console.log(`Loading: ${isLoading}`);
   };
 
   function handleCorrectClick(id) {
@@ -34,11 +36,19 @@ export const useGame = () => {
     shuffleCards();
   }
   function handleGameOver() {
+    setIsGameOver(true);
+    setIsLoading(false);
     resetScore();
     resetCardsClicked();
     resetLevel();
     shuffleCards();
     return;
+  }
+  function startNewGame() {
+    setIsLoading(true);
+    setIsGameOver(false);
+    console.log(`Game Over: ${isGameOver}`);
+    console.log(`Loading: ${isLoading}`)
   }
 
   function handleCardsClicked(id) {
@@ -54,6 +64,7 @@ export const useGame = () => {
     bestScore,
     level,
     startLevel,
+    startNewGame,
     handleCardsClicked,
   ];
 };
