@@ -24,7 +24,6 @@ export const useGame = () => {
   };
 
   function handleCorrectClick(id) {
-    console.log("correctClick");
     updateCardsClicked(id);
     updateScore(1);
     shuffleCards();
@@ -37,7 +36,6 @@ export const useGame = () => {
     return;
   }
   function handleGameOver() {
-    console.log("gameOver");
     resetScore();
     resetCardsClicked();
     resetLevel();
