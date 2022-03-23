@@ -35,6 +35,7 @@ const MainContainer = styled.main`
   background: ${({ theme }) => theme.gameboard};
   width: 100vw;
   height: 100%;
+  position: relative;
 `;
 const BoardWrapper = styled.div`
   display: flex;
