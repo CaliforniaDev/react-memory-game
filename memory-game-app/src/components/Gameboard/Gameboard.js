@@ -16,7 +16,6 @@ const Gameboard = ({ handleCardClickedProp, cards }) => {
                 fg={card.fgColor}
                 bg={card.bgColor}
                 onClick={handleCardClickedProp}
-                draggable="false"
               />
             );
           })}
@@ -43,4 +42,13 @@ const BoardWrapper = styled.div`
   grid-gap: 3.2rem; 
   justify-content: center;
   width: 100%;
+
+  img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
 `;
