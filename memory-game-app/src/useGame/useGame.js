@@ -1,5 +1,5 @@
 import theme from "../theme/theme";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useCards } from "./useCards";
 import { useCardsClicked } from "./useCardsClicked";
 import { useLevel } from "./useLevel";
