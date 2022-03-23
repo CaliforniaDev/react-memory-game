@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import theme from "./theme/theme";
 import { useGame } from "./useGame/useGame";
 import Gameboard from "./components/Gameboard/Gameboard";
 import GameHeader from "./components/GameHeader/Header";
