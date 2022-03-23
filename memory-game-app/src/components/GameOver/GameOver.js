@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-const GameOver = ({startNewGameClicked}) => {
+const GameOver = ({ score, bestScore, startNewGameClicked, show }) => {
   return (
-    <GameOverModal>
-      <h1>Game Over</h1>
-      <Button onClick={startNewGameClicked}>New Game</Button>
-    </GameOverModal>
+    show && (
+      <GameOverModal>
+        <h1>Game Over</h1>
+        <p>Great Job! Your Score is: {score} </p>
+        <p>Highscore: {bestScore}</p>
+        <Button onClick={startNewGameClicked}>New Game</Button>
+      </GameOverModal>
+    )
   );
 };
 
@@ -19,7 +23,6 @@ const GameOverModal = styled.div`
   position: absolute;
   background: green;
   z-index: 2000;
-  
 `;
 
 const Button = styled.div`
