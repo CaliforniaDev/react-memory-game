@@ -17,6 +17,7 @@ function App() {
     level,
     startLevel,
     startNewGame,
+    isGameOver,
     handleCardsClicked
   ] = useGame();
 
@@ -24,10 +25,9 @@ function App() {
     startLevel();
     console.log(level);
   }, [level]); // eslint-disable-line react-hooks/exhaustive-deps
-
   return (
     <>
-      <GameOver startNewGameClicked={startNewGame}/>
+      <GameOver score={score} bestScore={bestScore} show={isGameOver} startNewGameClicked={startNewGame}/>
       <GameHeader score={score} bestScore={bestScore} />
       <Gameboard cards={cards} handleCardClickedProp={handleCardsClicked} />
       
