@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import theme from "./theme/theme";
+import { useGame } from "./useGame/useGame";
+import Gameboard from "./components/Gameboard/Gameboard";
+import GameHeader from "./components/GameHeader/Header";
 // import { useScore } from "./hooks/useScore";
 // import { useCards } from "./hooks/useCards";
 // import { useCardsClicked } from "./hooks/useCardsClicked";
 // import { useLevel } from "./hooks/useLevel";
-import { useGame } from "./hooks/useGame";
-
-import Gameboard from "./components/Gameboard/Gameboard";
-import GameHeader from "./components/GameHeader/Header";
 
 function App() {
   const [
