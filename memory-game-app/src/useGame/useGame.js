@@ -27,13 +27,11 @@ export const useGame = () => {
     updateCardsClicked(id);
     updateScore(1);
     shuffleCards();
-    return;
   }
   function handleNextLevel() {
     nextLevel();
     resetCardsClicked();
     shuffleCards();
-    return;
   }
   function handleGameOver() {
     resetScore();
@@ -44,8 +42,9 @@ export const useGame = () => {
   }
 
   function handleCardsClicked(id) {
-    !checkCardsClicked(id) ? handleCorrectClick(id) : handleGameOver();
-    if (isAllCardsClicked(level.cardCount)) return handleNextLevel();
+    if (!checkCardsClicked(id)) handleCorrectClick(id);
+    if (checkCardsClicked(id)) handleGameOver();
+    if (isAllCardsClicked(level.cardCount)) handleNextLevel();
   }
 
   return [
