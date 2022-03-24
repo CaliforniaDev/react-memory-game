@@ -1,5 +1,5 @@
 import theme from "../theme/theme";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCards } from "./useCards";
 import { useCardsClicked } from "./useCardsClicked";
 import { useLevel } from "./useLevel";
@@ -19,10 +19,17 @@ export const useGame = () => {
     resetCardsClicked,
   ] = useCardsClicked();
 
+  useEffect(() => {
+    let timer = setTimeout(() => setIsLoading(false), 2000);
+    console.log(`Loading: ${isLoading}`);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [isLoading]);
+
   const startLevel = async () => {
     await updateCards(level.cardCount, theme);
-    setIsLoading(false);
-    console.log(`Loading: ${isLoading}`);
+    //setIsLoading(false);
   };
 
   function handleCorrectClick(id) {
