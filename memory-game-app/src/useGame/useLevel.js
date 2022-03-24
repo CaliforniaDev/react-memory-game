@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const useLevel = () => {
   const CARD_ADDEND = 2,
-    MAX_CARDS = 16;
+    MAX_CARDS = 12;
   const INITIAL_STATE = { cardCount: 4, currentLevel: 1 };
   const [level, setLevel] = useState(INITIAL_STATE);
 
