@@ -14,12 +14,11 @@ const CardItem = ({ id, bg, fg, title, imageSrc, onClick }) => {
   }, [toAnimate]);
 
   return (
-    <CardContainer onClick={() => onClick(id)} animation={toAnimate} bg={bg}>
-      <ImageWrapper fg={fg}>
+    // <CardContainer src={imageSrc} onClick={() => onClick(id)} animation={toAnimate} bg={bg}>
+      <ImageWrapper onClick={() => onClick(id)} fg={fg} >
         <img src={imageSrc} alt={title} />
       </ImageWrapper>
-      {/* <h4>{title}</h4> */}
-    </CardContainer>
+    // </CardContainer>
   );
 };
 
@@ -35,30 +34,7 @@ const appear = keyframes`
   }
 `;
 
-const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 14rem;
-  align-items: center;
-  justify-content: center;
-  height: 16rem;
-  border-radius: 0.8rem;
-  background: ${({ bg }) => bg};
-  color: #fff;
-  overflow: hidden;
-  transition: 200ms;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-  }
 
-  ${({ animation }) => {
-    animation &&
-      css`
-        animation: ${appear} 400ms 1s;
-      `;
-  }}
-`;
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -66,15 +42,44 @@ const ImageWrapper = styled.div`
   padding: 1.6rem;
   background-color: ${({ fg }) => fg};
   border-radius: 0.8rem;
-  height: 20rem;
-  width: 100%;
+  cursor: pointer;
 
   img {
-    width: 100%;
-    height: 100%;
-    border: 1px soild red;
+    width: 160px;
+    height: 160px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 `;
+
+
+// const CardContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   width: 14rem;
+//   align-items: center;
+//   justify-content: center;
+//   height: 16rem;
+//   border-radius: 0.8rem;
+//   background: ${({ bg }) => bg};
+//   color: #fff;
+//   overflow: hidden;
+//   transition: 200ms;
+//   cursor: pointer;
+//   &:hover {
+//     transform: scale(1.05);
+//   }
+
+//   ${({ animation }) => {
+//     animation &&
+//       css`
+//         animation: ${appear} 400ms 1s;
+//       `;
+//   }}
+// `;
+
 // /* Color Theme Swatches in Hex */
 // .Wuling---Year-of-the-Ox-1-hex { color: #038C3E; }
 // .Wuling---Year-of-the-Ox-2-hex { color: #04BF45; }
