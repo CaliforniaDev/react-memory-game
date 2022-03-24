@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 import { useState, useEffect } from "react";
+import { device } from "../../device";
 const CardItem = ({ id, bg, fg, title, imageSrc, onClick }) => {
   const [toAnimate, setToAnimate] = useState();
   useEffect(() => {
@@ -44,14 +45,33 @@ const ImageWrapper = styled.div`
   border-radius: 0.8rem;
   cursor: pointer;
 
+  position: relative;
+
   img {
-    width: 160px;
-    height: 160px;
+    width: 60px;
+    height: 60px;
   }
 
   &:hover {
     transform: scale(1.05);
   }
+
+
+  @media (min-width: 992px) {
+    img {
+      min-width: 120px;
+      min-height: 120px;
+    }
+  }
+
+  @media (min-width: 688px) {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  
 `;
 
 
