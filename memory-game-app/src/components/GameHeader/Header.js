@@ -11,7 +11,6 @@ const GameHeader = ({ score, bestScore }) => {
       if (window.pageYOffset < 30) setShowHeader(false);
     };
     document.addEventListener("scroll", handleScroll);
-    console.log("scroll");
     return () => {
       console.log("remove scroll");
       document.removeEventListener("scroll", handleScroll);
