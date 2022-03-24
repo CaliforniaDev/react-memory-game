@@ -3,6 +3,7 @@ import { useGame } from "./useGame/useGame";
 import Gameboard from "./components/Gameboard/Gameboard";
 import GameHeader from "./components/GameHeader/Header";
 import GameOver from "./components/GameOver/GameOver";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 // import { useScore } from "./hooks/useScore";
 // import { useCards } from "./hooks/useCards";
 // import { useCardsClicked } from "./hooks/useCardsClicked";
@@ -23,10 +24,10 @@ function App() {
 
   useEffect(() => {
     startLevel();
-    console.log(level);
   }, [level]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
+      <LoadingScreen show={isLoading} />
       <GameOver
         score={score}
         bestScore={bestScore}
