@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 import { useState, useEffect } from "react";
-import { device } from "../../device";
+import { deviceMinWidth } from "../../device";
 const CardItem = ({ id, bg, fg, title, imageSrc, onClick }) => {
   const [toAnimate, setToAnimate] = useState();
   useEffect(() => {
@@ -57,14 +57,14 @@ const ImageWrapper = styled.div`
   }
 
 
-  @media (min-width: 992px) {
+  @media ${deviceMinWidth.tablet} {
     img {
       min-width: 120px;
       min-height: 120px;
     }
   }
 
-  @media (min-width: 688px) {
+  @media ${deviceMinWidth.mobileL} {
     img {
       width: 100px;
       height: 100px;
