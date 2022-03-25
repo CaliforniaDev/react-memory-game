@@ -21,15 +21,24 @@ const GameOverModal = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  background: green;
+  background: ${({theme}) => theme.header};
   z-index: 2000;
+  color: ${({theme}) => theme.lightFont};
+  padding-bottom: 100px;
+
+  p {
+    font-size: 2.4rem;
+  }
+  
 `;
 
 const Button = styled.div`
-  padding: 1.2rem;
-  padding: 2.4rem;
+  padding: 1.2rem 2.4rem;
   cursor: pointer;
-  background: white;
+  border-radius: 0.8rem;
+  background: ${({theme}) => theme.fg.green};
+  margin-top: 2.4rem;
+  font-size: 2.4rem;
 `;
 
 export default GameOver;
