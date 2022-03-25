@@ -3,6 +3,7 @@ import CabinRegularW2 from "../lib/assets/fonts/Cabin-Regular.woff2";
 import CabinRegular from "../lib/assets/fonts/Cabin-Regular.woff";
 import RobotoCondensedW2 from "../lib/assets/fonts/Roboto-Regular.woff2";
 import RobotoCondensed from "../lib/assets/fonts/Roboto-Regular.woff";
+import bgTexture from "../lib/assets/textures/bgTexture.png";
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
@@ -42,7 +43,9 @@ body, textarea {
     letter-spacing: 1px;
     font-size: 1.6rem;
     margin: 0;
-    background: ${({ theme }) => theme.gameboard}
+    background: ${({ theme }) => theme.gameboard};
+    background-image: url(${bgTexture});
+    background-repeat: repeat;
 }
 h1,
 h2,

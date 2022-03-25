@@ -31,7 +31,6 @@ const MainContainer = styled.main`
   justify-content: center;
   padding: 16rem 2.4rem;
   flex-wrap: wrap;
-  background: ${({ theme }) => theme.gameboard};
   width: 100vw;
   height: 100%;
   position: relative;
