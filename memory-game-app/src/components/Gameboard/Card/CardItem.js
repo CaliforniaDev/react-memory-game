@@ -44,6 +44,7 @@ const ImageWrapper = styled.div`
   background-color: ${({ fg }) => fg};
   border-radius: 0.8rem;
   cursor: pointer;
+  border: 3px solid ${({ theme }) => theme.header};
 
   position: relative;
 
