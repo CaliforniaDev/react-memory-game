@@ -39,7 +39,7 @@ const MainContainer = styled.main`
 const BoardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  grid-gap: 3.2rem; 
+  grid-gap: 1.6rem;
   justify-content: center;
   width: 100%;
 
