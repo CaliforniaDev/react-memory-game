@@ -1,7 +1,16 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 import CardItem from "./Card/CardItem";
 
 const Gameboard = ({ handleCardClickedProp, cards }) => {
+  const [animate, setAnimate] = useState();
+
+  useEffect(() => {}, [animate]);
+
+  const handleCardClick = (id) => {
+    setAnimate((prev) => !prev);
+    handleCardClickedProp(id)
+  }
   return (
     <MainContainer>
       <BoardWrapper>
@@ -15,7 +24,7 @@ const Gameboard = ({ handleCardClickedProp, cards }) => {
                 id={card.id}
                 fg={card.fgColor}
                 bg={card.bgColor}
-                onClick={handleCardClickedProp}
+                onClick={handleCardClick}
               />
             );
           })}

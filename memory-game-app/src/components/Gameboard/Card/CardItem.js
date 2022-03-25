@@ -1,8 +1,21 @@
 import styled, { css, keyframes } from "styled-components";
 import { useState, useEffect } from "react";
 import { deviceMinWidth } from "../../device";
-const CardItem = ({ id, bg, fg, title, imageSrc, onClick }) => {
+
+const DURATION = 400;
+
+const appear = keyframes`
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
+const CardItem = ({ id, bg, fg, title, imageSrc, onClick, animate }) => {
   const [toAnimate, setToAnimate] = useState();
+
   useEffect(() => {
     setToAnimate(true);
     const animationTimeout = setTimeout(() => {
@@ -12,29 +25,18 @@ const CardItem = ({ id, bg, fg, title, imageSrc, onClick }) => {
     return () => {
       clearTimeout(animationTimeout);
     };
-  }, [toAnimate]);
+  }, [animate]);
 
   return (
     // <CardContainer src={imageSrc} onClick={() => onClick(id)} animation={toAnimate} bg={bg}>
-      <ImageWrapper onClick={() => onClick(id)} fg={fg} >
-        <img src={imageSrc} alt={title} />
-      </ImageWrapper>
+    <ImageWrapper onClick={() => onClick(id)} fg={fg} animation={toAnimate}>
+      <img src={imageSrc} alt={title} />
+    </ImageWrapper>
     // </CardContainer>
   );
 };
 
 export default CardItem;
-
-const appear = keyframes`
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-`;
-
 
 const ImageWrapper = styled.div`
   display: flex;
@@ -44,7 +46,19 @@ const ImageWrapper = styled.div`
   background-color: ${({ fg }) => fg};
   border-radius: 0.8rem;
   cursor: pointer;
+  transition: all 200ms;
   border: 3px solid ${({ theme }) => theme.header};
+  min-width: 60px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  ${({ animation }) =>
+    animation &&
+    css`
+      animation: ${appear} ${DURATION}ms 1;
+    `}
 
   position: relative;
 
@@ -52,11 +66,6 @@ const ImageWrapper = styled.div`
     width: 60px;
     height: 60px;
   }
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
 
   @media ${deviceMinWidth.tablet} {
     img {
@@ -71,10 +80,7 @@ const ImageWrapper = styled.div`
       height: 100px;
     }
   }
-
-  
 `;
-
 
 // const CardContainer = styled.div`
 //   display: flex;
