@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import icon from "../../lib/assets/Cube-1s-200px.gif";
+import icon from "../../lib/assets/RunningDeer.gif";
 
 const LoadingScreen = ({ show }) => {
   return (
@@ -24,6 +24,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 position: absolute;
-background: green;
+background: ${({theme}) => theme.header};
 z-index: 2000;
 `;
