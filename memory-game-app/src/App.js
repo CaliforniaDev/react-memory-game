@@ -4,6 +4,7 @@ import Gameboard from "./components/Gameboard/Gameboard";
 import GameHeader from "./components/GameHeader/Header";
 import GameOver from "./components/GameOver/GameOver";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import InstructionModal from "./components/InstructionModal";
 // import { useScore } from "./hooks/useScore";
 // import { useCards } from "./hooks/useCards";
 // import { useCardsClicked } from "./hooks/useCardsClicked";
@@ -20,8 +21,9 @@ function App() {
     startNewGame,
     isGameOver,
     handleCardsClicked,
+    showInstructions,
+    handleInstructions,
   ] = useGame();
-
   useEffect(() => {
     startLevel();
   }, [level]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -34,6 +36,7 @@ function App() {
         show={isGameOver}
         startNewGameClicked={startNewGame}
       />
+      <InstructionModal onClick={handleInstructions} show={showInstructions} />
       <GameHeader score={score} bestScore={bestScore} />
       <Gameboard cards={cards} handleCardClickedProp={handleCardsClicked} />
     </>

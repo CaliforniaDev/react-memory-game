@@ -8,6 +8,7 @@ import { useScore } from "./useScore";
 export const useGame = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [showInstructions, setShowInstructions] = useState(false);
 
   const [score, bestScore, resetScore, updateScore] = useScore();
   const [cards, updateCards, shuffleCards] = useCards();
@@ -27,10 +28,20 @@ export const useGame = () => {
     };
   }, [isLoading]);
 
+  useEffect(() => {
+    let timer = setTimeout(() => setShowInstructions(true), 2001);
+    return () => clearTimeout(timer);
+  }, []);
+
   const startLevel = async () => {
     await updateCards(level.cardCount, theme);
     //setIsLoading(false);
   };
+
+  function handleInstructions() {
+    setShowInstructions(false);
+    return;
+  }
 
   function handleCorrectClick(id) {
     updateCardsClicked(id);
@@ -65,5 +76,7 @@ export const useGame = () => {
     startNewGame,
     isGameOver,
     handleCardsClicked,
+    showInstructions,
+    handleInstructions,
   ];
 };
