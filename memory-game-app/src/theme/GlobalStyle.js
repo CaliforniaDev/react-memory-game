@@ -50,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1.6;
+    line-height: 1.6em;
     letter-spacing: 2px;
 }
 h1 {
