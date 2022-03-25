@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { deviceMaxWidth } from "../device";
 
 const Scoreboard = ({ score, bestScore }) => {
   return (
@@ -13,6 +14,19 @@ const Scoreboard = ({ score, bestScore }) => {
 const ScoreContainer = styled.div`
   display: flex;
   align-items: center;
+
+  p {
+    line-height: 1.6;
+  }
+
+  @media screen and ${deviceMaxWidth.tablet} {
+    p {
+      font-size: 2.4rem;
+    }
+    div {
+      height: 2.2rem;
+    }
+  }
 `;
 
 const Score = styled.p`
