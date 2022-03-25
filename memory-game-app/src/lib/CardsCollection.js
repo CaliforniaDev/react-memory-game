@@ -46,8 +46,20 @@ function retrieveForegroundTheme(cards, theme) {
 //     return cards;
 // }
 
-function cardShuffler(cards) {
-  const shuffled = cards.sort(() => Math.random() - 0.5);
+const getRandomIndex = (max) => Math.floor(Math.random() * max);
+
+function cardShuffler(prevCards) {
+  let cards = [...prevCards];
+  const length = cards.length;
+  let shuffled = [];
+  let r;
+
+  for (let i = 0; i < length; i += 1) {
+    r = getRandomIndex(cards.length);
+    shuffled = [...shuffled, ...cards.splice(r, 1)];
+    console.log(shuffled);
+  }
+
   return shuffled;
 }
 
