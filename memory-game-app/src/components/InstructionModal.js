@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { deviceMaxWidth } from "./device";
 const InstructionModal = ({ onClick, show }) => {
   return (
     show && (
       <ModalContainer onClick={onClick}>
         <p>Click each card once. </p>
-        <p>If you choose the same card GAME OVER!</p>
+        <p>If you choose the same card</p>
+        <p>GAME OVER!</p>
         <p>Click anywhere to continue</p>
       </ModalContainer>
     )
@@ -25,16 +27,24 @@ const ModalContainer = styled.div`
   padding-bottom: 100px;
   opacity: 0.95;
   text-align: center;
-  padding: 0 2.4rem, 8rem;
+  padding: 0 2.4rem 8rem;
+  cursor: pointer;
   
 
   p {
+    white-space: nowrap;
     font-size: 2.4rem;
   }
-  p:nth-child(3) {
+  p:nth-child(4) {
     font-size: 1.6rem;
     padding-top: 1.6rem;
   }
+
+  @media screen and ${deviceMaxWidth.mobileL} {
+    p {
+      font-size: 1.8rem;
+    }
+  } 
 `;
 
 export default InstructionModal;
