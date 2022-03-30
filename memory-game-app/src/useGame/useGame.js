@@ -1,4 +1,6 @@
 import theme from "../theme/theme";
+import goodClickWav from "../lib/assets/sounds/goodClick.wav";
+import gameOverWav from "../lib/assets/sounds/gameOver.wav";
 import { useState, useEffect } from "react";
 import { useCards } from "./useCards";
 import { useCardsClicked } from "./useCardsClicked";
@@ -33,6 +35,9 @@ export const useGame = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const goodClickAudio = new Audio(goodClickWav);
+  const gameOverAudio = new Audio(gameOverWav);
+
   const startLevel = async () => {
     await updateCards(level.cardCount, theme);
     //setIsLoading(false);
@@ -40,6 +45,7 @@ export const useGame = () => {
 
   function handleInstructions() {
     setShowInstructions(false);
+    goodClickAudio.play()
     return;
   }
 
@@ -47,6 +53,7 @@ export const useGame = () => {
     updateCardsClicked(id);
     updateScore(1);
     shuffleCards();
+    goodClickAudio.play();
   }
   function handleNextLevel() {
     nextLevel();
@@ -58,11 +65,15 @@ export const useGame = () => {
     resetCardsClicked();
     resetScore();
     resetLevel();
+    goodClickAudio.play();
   }
 
   function handleCardsClicked(id) {
     if (!checkCardsClicked(id)) handleCorrectClick(id);
-    if (checkCardsClicked(id)) setIsGameOver(true);
+    if (checkCardsClicked(id)) {
+      setIsGameOver(true);
+      gameOverAudio.play();
+    }
     if (isAllCardsClicked(level.cardCount)) handleNextLevel();
   }
 
