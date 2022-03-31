@@ -5,6 +5,7 @@ import GameHeader from "./components/GameHeader/Header";
 import GameOver from "./components/GameOver/GameOver";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import InstructionModal from "./components/InstructionModal";
+import Button from "./utils/Button";
 // import { useScore } from "./hooks/useScore";
 // import { useCards } from "./hooks/useCards";
 // import { useCardsClicked } from "./hooks/useCardsClicked";
@@ -39,6 +40,7 @@ function App() {
       <InstructionModal onClick={handleInstructions} show={showInstructions} />
       <GameHeader score={score} bestScore={bestScore} />
       <Gameboard cards={cards} handleCardClickedProp={handleCardsClicked} />
+      <Button title="Instructions" instructions onClick={handleInstructions}/>
     </>
   );
 }

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Button from "../../utils/Button";
+
 
 const GameOver = ({ score, bestScore, startNewGameClicked, show }) => {
   return (
@@ -7,7 +9,7 @@ const GameOver = ({ score, bestScore, startNewGameClicked, show }) => {
         <h1>Game Over</h1>
         <p>Great Job! Your Score is: {score} </p>
         <p>Highscore: {bestScore}</p>
-        <Button onClick={startNewGameClicked}>New Game</Button>
+        <Button title="New Game" onClick={startNewGameClicked} />
       </GameOverModal>
     )
   );
@@ -32,13 +34,6 @@ const GameOverModal = styled.div`
   
 `;
 
-const Button = styled.div`
-  padding: 1.2rem 2.4rem;
-  cursor: pointer;
-  border-radius: 0.8rem;
-  background: ${({theme}) => theme.fg.green};
-  margin-top: 2.4rem;
-  font-size: 2.4rem;
-`;
+
 
 export default GameOver;
