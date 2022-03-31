@@ -44,7 +44,7 @@ export const useGame = () => {
   };
 
   function handleInstructions() {
-    setShowInstructions(false);
+    setShowInstructions(prevState => !prevState);
     goodClickAudio.play()
     return;
   }
