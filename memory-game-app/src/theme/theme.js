@@ -11,5 +11,6 @@ const theme = {
   gameboard: "#255245",
   header: "#273038",
   lightFont: "#D9D9D9",
+  hover: "#37805e",
 };
 export default theme;
