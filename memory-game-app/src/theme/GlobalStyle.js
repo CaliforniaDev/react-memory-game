@@ -21,11 +21,14 @@ const GlobalStyle = createGlobalStyle`
          font-style: normal; 
 }
 
-html {
+html, body {
     font-size: 62.5%;
     line-height: 1.6;
     position: relative;
-    min-height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    height: -webkit-fill-available;
+    width: 100vw;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
