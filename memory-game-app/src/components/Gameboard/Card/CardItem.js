@@ -52,6 +52,7 @@ const ImageWrapper = styled.div`
 
   &:hover {
     transform: scale(1.1);
+    background: ${({theme}) => theme.hover};
   }
 
   ${({ animation }) =>
